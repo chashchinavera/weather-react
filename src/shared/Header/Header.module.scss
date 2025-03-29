@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  svg {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.header__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.header__themeChanger,
+.header__logo {
+  margin-right: 20px;
+}
