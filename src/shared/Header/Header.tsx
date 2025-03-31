@@ -37,7 +37,7 @@ export const Header = () => {
         <div className={s.header__title}>React weather</div>
       </div>
       <div className={s.header__wrapper}>
-        <div className={s.header__themeChanger}>
+        <div className={s.header__theme}>
           <HeaderThemeChangerSvg />
         </div>
         <Select
