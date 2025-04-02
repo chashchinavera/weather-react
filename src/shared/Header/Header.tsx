@@ -2,6 +2,7 @@ import Select from "react-select";
 import s from "./Header.module.scss";
 import { HeaderLogoSvg } from "../../assets/icons/svg/HeaderLogoSvg";
 import { HeaderThemeChangerSvg } from "../../assets/icons/svg/HeaderThemeChangerSvg";
+import { colourStyles } from "./customStyles";
 
 export const Header = () => {
   const options = [
@@ -14,19 +15,6 @@ export const Header = () => {
     { value: "Омск", label: "Омск" },
     { value: "Самара", label: "Самара" },
   ];
-
-  const colourStyles = {
-    control: (styles: any) => ({
-      ...styles,
-      backgroundColor: "rgba(71, 147, 255, 0.2)",
-      width: "194px",
-      height: "37px",
-      border: "none",
-      borderRadius: "10px",
-      zIndex: "100",
-      fontSize: "14px",
-    }),
-  };
 
   return (
     <header className={s.header}>
