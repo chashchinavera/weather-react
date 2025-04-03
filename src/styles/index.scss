@@ -9,7 +9,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  position: relative;
+  background-color: var(#{--body-background-default});
 }
 
 .app {
