@@ -1,15 +1,14 @@
 import { ReactNode, useState } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import { changeCssRootVariables } from "../model/ChangeCssRootVariables";
 
 interface Props {
   children: ReactNode;
 }
 
 export const ThemeProvider = ({ children, ...props }: Props) => {
-  const [theme, setTheme] = useState("light");
 
-  function toggleTheme(theme: string) {
     setTheme(theme);
+    changeCssRootVariables(theme);
   }
 
   return (
