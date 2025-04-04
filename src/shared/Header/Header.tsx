@@ -3,8 +3,7 @@ import s from "./Header.module.scss";
 import { HeaderLogoSvg } from "../../assets/icons/svg/HeaderLogoSvg";
 import { HeaderThemeChangerSvg } from "../../assets/icons/svg/HeaderThemeChangerSvg";
 import { useTheme } from "../../hooks/useTheme";
-import { useEffect } from "react";
-import { log } from "console";
+import { Theme } from "../../context/ThemeContext";
 
 export const Header = () => {
   const theme = useTheme();
@@ -20,11 +19,12 @@ export const Header = () => {
     { value: "Самара", label: "Самара" },
   ];
 
+  const isLightTheme = theme.theme === Theme.LIGHT;
+
   const colourStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor:
-        theme.theme === "light" ? "rgba(71, 147, 255, 0.2)" : "#4f4f4f",
+      backgroundColor: isLightTheme ? "rgba(71, 147, 255, 0.2)" : "#4f4f4f",
       width: "194px",
       height: "37px",
       border: "none",
@@ -34,32 +34,13 @@ export const Header = () => {
     }),
     singleValue: (styles: any) => ({
       ...styles,
-      color: theme.theme === "light" ? "#000" : "#fff",
+      color: isLightTheme ? "#000" : "#fff",
     }),
   };
 
   function changeTheme() {
-    theme.toggleTheme(theme.theme === "light" ? "dark" : "light");
+    theme.toggleTheme(isLightTheme ? Theme.DARK : Theme.LIGHT);
   }
-
-  useEffect(() => {
-    const root = document.querySelector(":root") as HTMLElement;
-
-    const components = [
-      "body-background",
-      "components-background",
-      "card-background",
-      "card-shadow",
-      "text-color",
-    ];
-
-    components.forEach((component) => {
-      root.style.setProperty(
-        `--${component}-default`,
-        `var(--${component}-${theme.theme})`
-      );
-    });
-  }, [theme.theme]);
 
   return (
     <header className={s.header}>
