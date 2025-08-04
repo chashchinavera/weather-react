@@ -36,6 +36,11 @@ export const Header = () => {
       ...styles,
       color: isLightTheme ? "#000" : "#fff",
     }),
+    menu: (provided: any) => ({
+      ...provided,
+      backgroundColor: isLightTheme ? "rgba(71, 147, 255, 0.2)" : "#4f4f4f",
+      color: isLightTheme ? "#000" : "#fff",
+    }),
   };
 
   function changeTheme() {
@@ -52,12 +57,21 @@ export const Header = () => {
       </div>
       <div className={s.header__wrapper}>
         <div className={s.header__theme} onClick={changeTheme}>
-          <HeaderThemeChangerSvg />
+          <HeaderThemeChangerSvg theme={isLightTheme} />
         </div>
         <Select
           options={options}
           styles={colourStyles}
           defaultValue={options[0]}
+          theme={(theme) => ({
+            ...theme,
+            borderRadius: 0,
+            colors: {
+              ...theme.colors,
+              primary: "#2e3035",
+              primary25: "#FFC022",
+            },
+          })}
         />
       </div>
     </header>
