@@ -16,7 +16,7 @@
   background: var(#{--card-background-default});
   border-radius: 10px;
   padding: 10px;
-  max-width: 149px;
+  max-width: 210px;
   width: 100%;
   transition: 0.3s;
   cursor: pointer;
@@ -64,25 +64,10 @@
 
 .tabs {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 7px;
 }
 
-.tabs__wrapper {
-  display: flex;
-}
-
 .tab {
-  margin-right: 15px;
-
-  &.active {
-    background-color: $primary-color;
-    color: #fff;
-  }
-}
-
-.tab,
-.tabs__cancel {
   box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
   border-radius: 5px;
   padding: 9px 20px;
@@ -92,5 +77,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: default;
 }

@@ -55,4 +55,6 @@
   position: absolute;
   top: 0;
   right: 0;
+  border-radius: $border-radius;
+  opacity: var(#{--cloud-opacity-default});
 }
