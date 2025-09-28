@@ -16,8 +16,14 @@ export const Card = ({ dayItem }: Props) => {
       <div className={s.day___icon}>
         <WeatherSvgSelector id={icon_id} />
       </div>
-      <div className={s.day__temp_day}>{temp_day}</div>
-      <div className={s.day__temp_night}>{temp_night}</div>
+      <div className={s.day__temp_day}>
+        {temp_day > 0 ? "+" : ""}
+        {temp_day}°
+      </div>
+      <div className={s.day__temp_night}>
+        {temp_night > 0 ? "+" : ""}
+        {temp_night}°
+      </div>
       <div className={s.day__info}>{info}</div>
     </div>
   );
