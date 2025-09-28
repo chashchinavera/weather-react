@@ -48,4 +48,9 @@ $opacity-light: 1;
   --text-color-dark: #{$light-color};
   --text-color-light: #{$dark-color};
   --text-color-default: var(#{--text-color-light});
+
+  //cloud-opacity
+  --cloud-opacity-dark: #{$opacity-dark};
+  --cloud-opacity-light: #{$opacity-light};
+  --cloud-opacity-default: var(#{$opacity-dark});
 }
